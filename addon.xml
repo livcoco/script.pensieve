@@ -6,7 +6,7 @@
 		<import addon="script.module.oauth2" version="1.5.211" />
 	</requires>
 
-	<extension point="xbmc.python.script" library="lib/xnote.py">
+	<extension point="xbmc.python.script" library="lib/pensieve.py">
 		<provides>executable</provides>
 	</extension>
 
