@@ -17,11 +17,11 @@ import evernote.edam.notestore.NoteStore as NoteStore
 import evernote.edam.type.ttypes as Types
 import evernote.edam.error.ttypes as Errors
 
-__author__ = 'ruuk'
-__url__ = 'http://code.google.com/p/evernote-xbmc/'
-__date__ = '1-21-2013'
-__version__ = '0.3.1'
-__addon__ = xbmcaddon.Addon(id='script.evernote')
+__author__ = 'livcoco team.  formerly ruuk'
+__url__ = 'https://github.com/livcoco/script.pensieve/'
+__date__ = '4-30-2018'
+__version__ = '0.4.1'
+__addon__ = xbmcaddon.Addon(id='script.pensieve')
 __lang__ = __addon__.getLocalizedString
 
 
