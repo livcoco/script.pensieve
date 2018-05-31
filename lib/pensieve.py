@@ -88,10 +88,12 @@ class EvernoteSessionError(Exception):
 			
 class EvernoteSession():
 	def __init__(self):
-		self.consumerKey = "ruuk25-1051"
-		self.consumerSecret = "5a5ca4c9cecf455b"
-		self.evernoteHost = "www.evernote.com"
-		
+		self.consumerKey = "asdfstuart"
+		self.consumerSecret = "e465eb26dc9f3df4"
+#		self.evernoteHost = "www.evernote.com"
+		self.evernoteHost = "sandbox.evernote.com"
+                self.noteStoreURL = "https://sandbox.evernote.com/shard/s1/notestore"
+		self.developerToken = "S=s1:U=9495e:E=16ac1af0b9c:C=16369fddd38:P=1cd:A=en-devtoken:V=2:H=ee18c07e522c10c0d7d1f5cdf3d67823"
 		self.userStoreUri = "https://" + self.evernoteHost + "/edam/user"
 		self.noteStoreUriBase = "https://" + self.evernoteHost + "/edam/note/"
 		
@@ -112,9 +114,12 @@ class EvernoteSession():
 		
 	def authenticate(self):
 		LOG('Authenticating')
+                #import web_pdb; web_pdb.set_trace()
 		import urlparse, urllib
 		oauth = self.getOAuth()
 		client = self.getOAuthClient(oauth)
+                LOG('  oauth' + str(oauth) + ', client' + str(client))
+                LOG('    client.request arg1:' + self.request_token_url + '?oauth_callback='+ urllib.quote(self.callback_url))
 		resp, content = client.request(self.request_token_url + '?oauth_callback='+ urllib.quote(self.callback_url), "POST")
 		#LOG(resp['status'])
 		if resp['status'] != '200':
@@ -179,6 +184,7 @@ class EvernoteSession():
 		
 	def webwiewer(self,url):
 		from webviewer import webviewer #@UnresolvedImport
+                
 		autoforms = [	{'name':'login_form'},{'name':'oauth_authorize_form'}]
 		autoclose = {	'url':'.*&oauth_verifier=.*',
 						'heading':__lang__(32505),
@@ -574,6 +580,7 @@ def parsePassword(password):
 	return type_c,keyfile,password
 	
 def getUserList():
+        #import web_pdb; web_pdb.set_trace()
 	userlist = __addon__.getSetting('user_list').split('@,@')
 	if not userlist: return []
 	if not userlist[0]: return []
@@ -629,6 +636,7 @@ class XNoteSession():
 		return True
 			
 	def startSession(self,user=None,new=False,just_close=False):
+                #import web_pdb; web_pdb.set_trace()
 		if new:
 			user = None
 			token = None
@@ -754,6 +762,9 @@ class XNoteSession():
 		self.viewNote(note)
 	
 	def getUserToken(self,user=None,force=False):
+                # SHN - use simple connection rather than oauth2
+                return self.esession.consumerKey, self.esession.developerToken
+        
 		if not user:
 			if __addon__.getSetting('choose_user') == 'true':
 				user = self.chooseUser()
@@ -837,6 +848,10 @@ class XNoteSession():
 		return len(ulist)
 			
 	def doContextMenu(self):
+                #import web_pdb; web_pdb.set_trace()
+                # uncomment this, and explore what you can do with the player form web_pdb in the browser, e.g. !(player.getTime())
+                player = xbmc.Player()
+
 		options = [__lang__(32011),__lang__(32012),__lang__(32013),__lang__(32016),__lang__(32014),__lang__(32015)]
 		optionIDs = ['xbmclog','screenshot','write','notebook','adduser','changeuser']
 

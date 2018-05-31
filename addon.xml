@@ -4,6 +4,7 @@
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.web.viewer" version="0.9.4" />
 		<import addon="script.module.oauth2" version="1.5.211" />
+		<import addon="script.module.web-pdb" />
 	</requires>
 
 	<extension point="xbmc.python.script" library="lib/pensieve.py">
