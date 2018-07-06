@@ -7,6 +7,90 @@
 		<posy>0</posy>
 	</coordinates>
 	<controls>
+
+
+		<control type="group">
+			<posx>10</posx>
+			<posy>420</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1260</width>
+				<height>40</height>
+				<texture border="10">script-evernote-panel.png</texture>
+			</control>
+			<!--
+			<control type="label">
+				<posx>20</posx>
+				<posy>0</posy>
+				<width>1240</width>
+				<height>30</height>
+				<font>font24_title</font>
+				<aligny>center</aligny>
+				<textcolor>black</textcolor>
+				<align>left</align>
+				<info>Container(125).ListItem.Label</info>
+			</control>
+			<control type="textbox" id="130">
+				<description>Note Content</description>
+				<posx>10</posx>
+				<posy>42</posy>
+				<width>1222</width>
+				<height>240</height>
+				<info>Container(125).ListItem.Property(content)</info>
+				<visible>true</visible>
+				<font>font13</font>
+				<textcolor>FF000000</textcolor>
+				<pulseonselect></pulseonselect>
+				<pagecontrol>131</pagecontrol>
+			</control>
+			<control type="label" id="132">
+				<description>Note Content</description>
+				<posx>10</posx>
+				<posy>42</posy>
+				<width>1222</width>
+				<height>240</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$ADDON[script.evernote 32902]</label>
+				<visible>true</visible>
+				<font>font30_title</font>
+				<textcolor>FF000000</textcolor>
+				<visible>StringCompare(Container(125).ListItem.Property(content),) + Control.HasFocus(125)</visible>
+			</control>
+			<control type="group">
+				<posx>1242</posx>
+				<posy>42</posy>
+				<control type="scrollbar" id="131">
+					<description>scroll bar indicator for lists</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<onleft>125</onleft>
+					<onright>120</onright>
+					<width>12</width>
+					<height>240</height>
+					<texturesliderbackground border="6">script-evernote-list-focus.png</texturesliderbackground>
+					<texturesliderbar border="6">script-evernote-list-focus.png</texturesliderbar>
+					<texturesliderbarfocus border="6">script-evernote-list-focus.png</texturesliderbarfocus>
+					<textureslidernib>-</textureslidernib>
+					<textureslidernibfocus>-</textureslidernibfocus>
+					<orientation>vertical</orientation>
+					<showonepage>true</showonepage>
+					<visible allowhiddenfocus="true">Control.HasFocus(131)</visible>
+				</control>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1260</width>
+				<height>290</height>
+				<colordiffuse>66FFFFFF</colordiffuse>
+				<texture>script-evernote-black-square.png</texture>
+				<visible>!Control.HasFocus(131)</visible>
+			</control> -->
+		</control>
+
+	  
 		<control type="group">
 			<posx>10</posx>
 			<posy>10</posy>
@@ -211,7 +295,8 @@
 				<width>412</width>
 				<height>400</height>
 				<colordiffuse>66FFFFFF</colordiffuse>
-				<texture>script-evernote-black-square.png</texture>
+				<!--<colordiffuse>66FFFF00</colordiffuse>-->
+				<texture>script-evernote-black-square_transparent.png</texture>
 				<visible>!Control.HasFocus(120)</visible>
 			</control>
 		</control>
@@ -336,12 +421,12 @@
 		</control>
 		<control type="group">
 			<posx>10</posx>
-			<posy>420</posy>
+			<posy>470</posy>
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>1260</width>
-				<height>290</height>
+				<height>240</height>
 				<texture border="10">script-evernote-panel.png</texture>
 			</control>
 			<control type="label">

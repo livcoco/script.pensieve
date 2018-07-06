@@ -848,7 +848,7 @@ class XNoteSession():
 		return len(ulist)
 			
 	def doContextMenu(self):
-                #import web_pdb; web_pdb.set_trace()
+                import web_pdb; web_pdb.set_trace()
                 # uncomment this, and explore what you can do with the player form web_pdb in the browser, e.g. !(player.getTime())
                 player = xbmc.Player()
 
